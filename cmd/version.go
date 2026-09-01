@@ -37,7 +37,7 @@ func SetVersionInfo(version, commit, date, builtBy string) {
 	applyVersion()
 }
 
-// applyVersion refreshes what 'rel --version' prints. The report is rendered
+// applyVersion refreshes what 'semver --version' prints. The report is rendered
 // eagerly because cobra's version template cannot call arbitrary functions.
 func applyVersion() {
 	rootCmd.Version = Version()
@@ -123,7 +123,7 @@ func builtByValue() string {
 // versionInfo renders the multi-line version report.
 func versionInfo() string {
 	var b strings.Builder
-	fmt.Fprintf(&b, "rel %s\n", Version())
+	fmt.Fprintf(&b, "semver %s\n", Version())
 	fmt.Fprintf(&b, "commit:   %s\n", commitValue())
 	fmt.Fprintf(&b, "built:    %s\n", dateValue())
 	fmt.Fprintf(&b, "built by: %s\n", builtByValue())
