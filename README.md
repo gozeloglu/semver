@@ -6,7 +6,13 @@ It reads the current git tag and creates a new version by incrementing the speci
 
 ## Installation
 
-You can install it directly if you have Go installed on your system:
+You can install it using Homebrew (macOS/Linux):
+
+```bash
+brew install gozeloglu/tap/semver
+```
+
+Alternatively, you can install it directly if you have Go installed on your system:
 
 ```bash
 go install github.com/gozeloglu/semver@latest
